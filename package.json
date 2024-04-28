@@ -1,16 +1,11 @@
 {
   "name": "screeps-typescript-rocket-starter",
   "module": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "test": "bun test --preload ./src/test/setup.ts",
-    "lint": "bunx biome check src",
-    "format": "bunx biome format --write src",
-    "push-main": "bun --bun push-screeps.ts main",
-    "push-pserver": "bun --bun push-screeps.ts pserver"
-  },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/bun": "latest",
     "@types/lodash": "^3.10.1",
     "@types/screeps": "^3.3.7",
@@ -19,10 +14,27 @@
     "rollup": "^4.17.0",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-screeps": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.36.0",
     "screeps-api": "^1.11.0",
     "screeps-jest": "^2.0.2"
   },
+  "scripts": {
+    "test": "bun test --preload ./src/test/setup.ts",
+    "lint": "bunx biome check src",
+    "format": "bunx biome format --write src",
+    "build": "rollup -c",
+    "push-main": "rollup -c --environment DEST:main",
+    "push-pserver": "rollup -c --environment DEST:pserver",
+    "push-season": "rollup -c --environment DEST:season",
+    "push-sim": "rollup -c --environment DEST:sim",
+    "watch-main": "rollup -cw --environment DEST:main",
+    "watch-plocal": "rollup -cw --environment DEST:plocal",
+    "watch-pserver": "rollup -cw --environment DEST:pserver",
+    "watch-season": "rollup -cw --environment DEST:season",
+    "watch-sim": "rollup -cw --environment DEST:sim"
+  },
+  "type": "module",
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.5"
   }
 }
