@@ -82,6 +82,9 @@ const runUpload = (api: ScreepsAPI, branch: string, code: CodeList) => {
   });
 };
 
+// Bun doesn't support building cjs modules yet
+// To work around this, just transform the esm to cjs using esm-to-cjs
+// This could cause issues with code that imports in weird ways
 const convertedMain = runTransform(await Bun.file("./dist/index.js").text());
 
 const code = { main: convertedMain };
