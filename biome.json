@@ -1,0 +1,15 @@
+{
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 80,
+    "lineEnding": "crlf"
+  },
+  "organizeImports": {
+    "enabled": true,
+    "include": ["src/**/*.ts", "src/**/*.js"]
+  },
+  "linter": {
+    "enabled": true
+  }
+}
