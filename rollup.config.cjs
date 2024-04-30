@@ -31,7 +31,7 @@ const output = [
   },
 ];
 
-if (cfg.copy) {
+if (cfg?.copy) {
   output.push({ ...output[0], file: cfg.copy });
 } else {
   plugins.push(screeps({ config: cfg, dryRun: cfg == null }));

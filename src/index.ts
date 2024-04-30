@@ -47,3 +47,4 @@ function processCreep(creep: Creep) {
     minerLogic(creep);
   }
 }
+
