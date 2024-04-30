@@ -10,6 +10,10 @@ Features:
 * Unit tests with [screeps-jest](https://github.com/eduter/screeps-jest) (`bun run test`)
 * Code bundling using [rollup](https://rollupjs.org/) and [rollup-plugin-screeps](https://github.com/Arcath/rollup-plugin-screeps)
 
+## Requirements
+
+* [Bun](https://bun.sh/docs/installation) must be installed
+
 ## Getting started
 
 To install dependencies:
